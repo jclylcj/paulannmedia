@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="120" viewBox="0 0 400 120">
+  <title>Paul Ann Media</title>
+    <g transform="translate(8,10) scale(1.0)" fill="none" stroke-linecap="square" stroke-linejoin="round">
+      <path d="M18 88 V12 H50
+               C72 12 84 25 84 43
+               C84 61 72 74 50 74
+               H38"
+            stroke="#1A2F3D" stroke-width="5.5"/>
+      <path d="M38 74 V26 H49
+               C61 26 69 33 69 43
+               C69 53 61 60 49 60
+               H38"
+            stroke="#1A2F3D" stroke-width="5.5"/>
+      <path d="M45 35 L60 43 L45 51 Z"
+            stroke="#2AA09A" stroke-width="4.29" stroke-linejoin="round"/>
+      <rect x="24" y="78" width="5.5" height="5.5" fill="#D4883A" stroke="none"/>
+    </g>
+  <g font-family="system-ui, -apple-system, 'Segoe UI', Arial, Helvetica, sans-serif">
+    <text x="118" y="58" font-size="35" font-weight="600" fill="#1A2F3D" letter-spacing="-0.8">Paul Ann</text>
+    <text x="120" y="88" font-size="21" font-weight="600" fill="#2AA09A" letter-spacing="5">MEDIA</text>
+  </g>
+</svg>
