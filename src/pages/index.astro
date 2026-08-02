@@ -1,0 +1,100 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const services = [
+  { name: 'Websites', detail: 'Fast, static, built to be found — by search engines and by AI models.' },
+  { name: 'Social campaigns', detail: 'Content that runs where your audience actually is, on a cadence you can sustain.' },
+  { name: 'Marketing strategy', detail: 'What to say, to whom, and in what order. The plan before the spend.' },
+  { name: 'Lead generation', detail: 'Qualified prospects into your pipeline, priced on outcomes rather than impressions.' },
+  { name: 'Content systems', detail: 'Editorial engines that keep producing after the engagement ends.' },
+  { name: 'AI visibility', detail: 'Structured data, schema, and llms.txt so language models can find and cite you.' },
+];
+---
+<Layout title="Paul Ann Media — An AI-Native Media Group">
+  <section class="bg-navy text-cream">
+    <div class="mx-auto max-w-4xl px-5 py-24">
+      <p class="text-sm font-semibold uppercase tracking-widest text-teal">Paul Ann Media</p>
+      <h1 class="mt-5 text-4xl font-bold leading-tight sm:text-5xl">
+        Marketing built the way<br />it actually works now.
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-slate">
+        A full-service media group, AI-native from the ground up. We build the audience,
+        then the machine that serves it — websites, campaigns, content, and pipeline.
+      </p>
+      <a href="#contact"
+         class="mt-9 inline-block rounded bg-teal px-8 py-3 font-semibold text-navy hover:bg-teal-light transition-colors">
+        Start a Conversation
+      </a>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-5 py-20">
+    <h2 class="text-2xl font-bold">What we do</h2>
+    <p class="mt-2 max-w-2xl text-slate">
+      Six services that compound. Most clients start with one and grow into several.
+    </p>
+    <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {services.map(s => (
+        <div class="rounded-lg border border-navy/10 bg-white p-6">
+          <p class="font-semibold text-navy">{s.name}</p>
+          <p class="mt-2 text-sm text-slate">{s.detail}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="border-y border-navy/10 bg-white py-20">
+    <div class="mx-auto max-w-4xl px-5">
+      <h2 class="text-2xl font-bold">Why operators, not consultants</h2>
+      <p class="mt-5 text-lg text-slate">
+        Most agencies learn your business from a discovery call. We learn it the way you did —
+        by running one. Paul Ann Media was built inside a working company, applying AI to real
+        operations with real consequences. That's a different kind of advice than theory.
+      </p>
+      <p class="mt-4 text-lg text-slate">
+        It also means we know what not to sell you. Not every problem is a marketing problem,
+        and we'll say so.
+      </p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-5 py-20">
+    <h2 class="text-2xl font-bold">Our own products</h2>
+    <p class="mt-2 max-w-2xl text-slate">
+      We don't only build for clients. We build and run our own — which is how we stay honest
+      about what works.
+    </p>
+    <div class="mt-8 grid gap-5 md:grid-cols-2">
+      <a href="https://hometimejobs.com" class="rounded-lg border border-navy/10 bg-white p-7 hover:border-teal transition-colors">
+        <p class="font-semibold text-navy">HomeTimeJobs</p>
+        <p class="mt-2 text-sm text-slate">
+          A CDL driver platform organized around home time rather than cents per mile.
+          Driver audience, carrier pipeline.
+        </p>
+        <p class="mt-4 text-sm font-semibold text-teal">hometimejobs.com &rarr;</p>
+      </a>
+      <div class="rounded-lg border border-navy/10 bg-white p-7">
+        <p class="font-semibold text-navy">Paul Ann Labs</p>
+        <p class="mt-2 text-sm text-slate">
+          Our sister company. Where marketing ends and operations begin — AI deployed
+          inside the business itself.
+        </p>
+        <p class="mt-4 text-sm text-slate">In development</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="bg-navy-deep py-20 text-cream">
+    <div class="mx-auto max-w-2xl px-5 text-center">
+      <h2 class="text-3xl font-bold">Start a conversation.</h2>
+      <p class="mt-4 text-slate">
+        Tell us what you're trying to grow. If we're not the right fit, we'll say that too —
+        and usually point you somewhere better.
+      </p>
+      <a href="mailto:hello@paulannmedia.com"
+         class="mt-8 inline-block rounded bg-teal px-8 py-3 font-semibold text-navy hover:bg-teal-light transition-colors">
+        hello@paulannmedia.com
+      </a>
+    </div>
+  </section>
+</Layout>

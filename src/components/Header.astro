@@ -1,0 +1,23 @@
+---
+const links = [
+  { href: '/services', label: 'Services' },
+  { href: '/work', label: 'Work' },
+  { href: '/about', label: 'About' },
+];
+---
+<header class="bg-navy text-cream">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-5">
+    <a href="/" class="text-lg font-bold tracking-tight">
+      Paul Ann <span class="text-teal">Media</span>
+    </a>
+    <div class="hidden gap-7 text-sm md:flex">
+      {links.map(l => (
+        <a href={l.href} class="hover:text-teal transition-colors">{l.label}</a>
+      ))}
+    </div>
+    <a href="/#contact"
+       class="rounded bg-teal px-4 py-2 text-sm font-semibold text-navy hover:bg-teal-light transition-colors">
+      Start a Conversation
+    </a>
+  </nav>
+</header>

@@ -1,0 +1,60 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const detail = [
+  {
+    name: 'Websites',
+    body: 'Static-first sites that load fast and stay cheap to run. Built with modern tooling rather than page builders, which means they are fully readable by search crawlers and by AI models — not locked behind JavaScript that machines cannot see.',
+  },
+  {
+    name: 'Social campaigns',
+    body: 'Channel selection based on where your audience actually spends time, not where agencies like to report numbers. Content calendars you can sustain after we leave, and a house style your team can carry forward.',
+  },
+  {
+    name: 'Marketing strategy',
+    body: 'The order of operations before the spend. Who you are talking to, what they already believe, what would change their mind, and which channel earns the first dollar. Strategy is mostly deciding what not to do.',
+  },
+  {
+    name: 'Lead generation',
+    body: 'Qualified prospects delivered into your pipeline. We define what qualified means before quoting a price, because a cheap unqualified lead is more expensive than no lead at all.',
+  },
+  {
+    name: 'Content systems',
+    body: 'Editorial engines rather than one-off campaigns. The goal is a system your team keeps running after the engagement ends, producing material that compounds instead of expiring.',
+  },
+  {
+    name: 'AI visibility',
+    body: 'Schema markup, structured data, llms.txt, and crawler configuration so language models can find, understand, and cite your business. Most companies are still optimizing only for search engines. The traffic is moving.',
+  },
+];
+---
+<Layout
+  title="Services — Paul Ann Media"
+  description="Websites, social campaigns, marketing strategy, lead generation, content systems, and AI visibility."
+>
+  <article class="mx-auto max-w-3xl px-5 py-20">
+    <h1 class="text-4xl font-bold">Services</h1>
+    <p class="mt-5 text-lg text-slate">
+      Six services that compound. Most clients start with one, prove it works, and grow into
+      several. We would rather earn the second engagement than oversell the first.
+    </p>
+
+    <div class="mt-14 space-y-12">
+      {detail.map(d => (
+        <div>
+          <h2 class="text-xl font-semibold text-teal">{d.name}</h2>
+          <p class="mt-3 text-slate">{d.body}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="mt-16 rounded-lg border border-navy/10 bg-white p-8">
+      <h2 class="text-xl font-semibold">How we price</h2>
+      <p class="mt-3 text-slate">
+        Monthly retainers for ongoing work, fixed fees for defined projects. Advertising spend
+        is paid by you directly to the platform, never marked up through us. You will always
+        know what is our fee and what is media cost.
+      </p>
+    </div>
+  </article>
+</Layout>

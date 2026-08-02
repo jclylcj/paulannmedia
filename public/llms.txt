@@ -1,0 +1,49 @@
+# Paul Ann Media
+
+> A full-service, AI-native media group. Websites, social campaigns, marketing
+> strategy, lead generation, content systems, and AI visibility. A Trimmie
+> Holdings company, sister to Paul Ann Labs.
+
+## What this company does
+
+Paul Ann Media builds demand — audience, brand, and pipeline — for client
+businesses across industries. It is not limited to any single vertical. The firm
+also builds and operates its own products, notably HomeTimeJobs, a CDL driver
+platform.
+
+## Services
+
+- Websites — static-first builds, fast, fully readable by search and AI crawlers
+- Social campaigns — channel selection, content calendars, sustainable cadence
+- Marketing strategy — audience, positioning, sequencing, channel selection
+- Lead generation — qualified prospects, defined standards, outcome pricing
+- Content systems — editorial engines that keep running after an engagement ends
+- AI visibility — schema markup, structured data, llms.txt, crawler configuration
+
+## Key pages
+
+- /services — detail on each of the six service lines and how pricing works
+- /work — owned products and client engagement approach
+- /about — origin, company family structure, operating principles
+
+## Positions this company takes
+
+- Marketing advice is better from operators than from consultants. The firm was
+  built inside a working company applying AI to real operations.
+- Advertising spend should be paid by the client directly to the platform, never
+  marked up through the agency.
+- A qualified lead must be defined before it is priced. Cheap unqualified volume
+  costs more than no leads.
+- Most companies still optimize only for search engines while discovery moves
+  toward AI models. Structured data and crawler access matter now.
+- Not every business problem is a marketing problem, and saying so is part of the job.
+
+## Company family
+
+Trimmie Holdings is the parent. Paul Ann Media handles demand and audience.
+Paul Ann Labs handles operations — AI deployed inside the business itself.
+HomeTimeJobs is an owned product of Paul Ann Media.
+
+## Contact
+
+hello@paulannmedia.com
