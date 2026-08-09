@@ -1,0 +1,380 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = "The Website Wasn't Broken. The System Around It Was.";
+const description = 'Turning a legacy recruiting presence into a measurable acquisition architecture without rebuilding from scratch.';
+const published = '2026-08-08';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": title,
+  "description": description,
+  "datePublished": published,
+  "dateModified": published,
+  "inLanguage": "en-US",
+  "author": { "@type": "Organization", "name": "Paul Ann Media", "url": "https://paulannmedia.com" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Paul Ann Media",
+    "url": "https://paulannmedia.com",
+    "parentOrganization": { "@type": "Organization", "name": "Trimmie Holdings" }
+  },
+  "isPartOf": { "@type": "CreativeWorkSeries", "name": "A Real Question Was Put to AI Macx" },
+  "about": [
+    "marketing attribution",
+    "structured data",
+    "recruitment marketing",
+    "conversion tracking",
+    "information architecture"
+  ]
+};
+
+const failures = [
+  {
+    h: 'Failure 1 — We sequenced the renovation before the measurement, and the measurement re-graded the renovation.',
+    body: [
+      'Expected: fix the visible architecture first — paths, pages, hierarchy — then stand up the reconciliation join to measure the improved system. Building the machine before installing the gauges felt like the right order.',
+      'Happened: when the join to the far-side system of record finally came up, it contradicted part of the model we had renovated against. Doors we had treated as secondary were producing more than assumed; a path we had invested in mattered less than its traffic implied. The renovation was built partly on the folklore we had been hired to replace.',
+      'Changed: the order, permanently. The join is now the first thing stood up, before any architectural opinion is formed. Measurement leads renovation. We had it backwards, and the backwards version is the one that feels natural — which is exactly why it is worth publishing.'
+    ]
+  },
+  {
+    h: 'Failure 2 — We treated deployment as verification.',
+    body: [
+      'Expected: instrumentation and markup, once deployed through the CMS’s extension layer, would behave as written.',
+      'Happened: some of it didn’t. Extension layers on legacy platforms interact with themes and plugins in ways invisible until you inspect the rendered output — markup that validated in testing emerged duplicated or suppressed in production, and an event that fired on one template silently failed on another that looked identical in the admin panel. For a period we believed things were live that were not, and the data carries a gap with our name on it.',
+      'Changed: verification became a separate step from deployment, performed against rendered production output, on a checklist, every time. Nothing is live because we shipped it; it is live when we have seen it render.'
+    ]
+  },
+  {
+    h: 'Failure 3 — still open — Single-source attribution is a fiction the tooling imposes.',
+    body: [
+      'A candidate touches a listing, then an ad, then arrives direct two weeks later. Systems of record store one source per outcome, and some revise that field later under their own rules.',
+      'Expected: a defensible single source per outcome. Happened: a meaningful share of outcomes have several legitimate sources or a source that changed after the fact, so any single-source report quietly picks a winner by mechanism rather than by truth.',
+      'Changed, so far: we report the ambiguity class explicitly instead of hiding it. But we do not yet have a multi-touch model we trust enough to publish, and we are not going to pretend otherwise here. Open.'
+    ]
+  }
+];
+---
+<Layout title={`${title} — Paul Ann Media`} description={description} schema={schema}>
+  <article class="mx-auto max-w-3xl px-5 py-20">
+
+    <p class="text-sm font-semibold uppercase tracking-wide text-teal">
+      White Paper 01 &middot; Paul Ann Media
+    </p>
+    <h1 class="mt-3 text-4xl font-bold leading-tight">{title}</h1>
+    <p class="mt-4 text-xl text-slate">
+      Turning a legacy recruiting presence into a measurable acquisition architecture
+      without rebuilding from scratch
+    </p>
+    <p class="mt-6 text-sm text-slate">
+      Published <time datetime={published}>8 August 2026</time> &middot; about 12 minutes
+    </p>
+
+    <div class="mt-10 rounded-lg border border-navy/10 bg-white p-6 text-sm text-slate">
+      <p><strong class="text-navy">On sourcing.</strong> This paper is method-first. The approach
+      described here is portable and is the argument; illustrations are composites drawn from field
+      work and operating experience, with anything identifying changed or removed, and hypotheticals
+      are marked as hypotheticals. Where an outcome is stated, it is directional and drawn from work
+      we actually did. Where we do not know something, we say so — a redaction bar never stands
+      where the honest answer is &ldquo;we didn&rsquo;t measure that.&rdquo;</p>
+    </div>
+
+    <h2 class="mt-16 text-2xl font-bold">1. The Condition</h2>
+    <p class="mt-4 text-lg text-navy">
+      Traffic exists. Applications exist. And nobody can confidently explain what is producing what.
+    </p>
+    <p class="mt-3 text-slate">
+      That sentence describes most mature companies we have worked inside, and it describes no
+      failure at all. It describes sediment.
+    </p>
+    <p class="mt-3 text-slate">
+      A company that has operated for decades and recruited through all of them accumulates: pages
+      built by three generations of vendors, templates that survived two redesigns, tracking scripts
+      installed for campaigns nobody remembers, feeds syndicating listings under contracts signed by
+      someone who has retired, an application system owned by a third party, structured data written
+      for a search engine that no longer reads it that way, and messaging that has drifted page by
+      page until the company describes itself differently depending on which door you enter through.
+    </p>
+    <p class="mt-3 text-slate">
+      Every layer was a reasonable decision when it was made. That is the important part. This is
+      what a functioning company looks like after years of functioning. The organization kept hiring
+      the whole time.
+    </p>
+    <p class="mt-3 text-slate">
+      What never existed was the system-level view. Each layer answers to the moment it was installed
+      in; no layer answers to the whole. So when leadership asks the reasonable question — what is
+      our money actually producing? — the honest answer available anywhere in the building is a shrug
+      with a dashboard attached.
+    </p>
+    <p class="mt-3 text-slate">
+      The instinct at that point, encouraged by every vendor who returns the call, is to rebuild. New
+      site, new stack, new dashboards. We think the instinct is usually wrong. A rebuild replaces the
+      one thing that was never the problem — the website — and resets assets that took years to
+      accumulate, while leaving the actual problem, the unmeasured system around the site, faithfully
+      intact on the new platform.
+    </p>
+    <p class="mt-3 text-slate">
+      The alternative is a method. It has six steps, it runs against the live system without pausing
+      it, and it ends with a company that can answer the question. The constraints come first,
+      because they shaped everything.
+    </p>
+
+    <h2 class="mt-14 text-2xl font-bold">2. The Constraints</h2>
+    <p class="mt-3 text-slate">
+      The work runs under five self-imposed rules. No rebuild — the site and its accumulated search
+      equity stay. No CMS change — whatever it runs on, it keeps running on. No disruption —
+      recruiting operates continuously while the work ships into moving traffic. No material increase
+      in media spend — the mandate is to make existing spend legible before arguing about its size.
+      Preserve vendor systems — the application completes on a third-party platform, and that
+      platform stays.
+    </p>
+    <p class="mt-3 text-slate">
+      Each rule makes the work harder and better for the same reason: nothing can be swept away, so
+      everything must be understood. And the last rule deserves one more sentence, because it is not
+      unique to recruiting: booking engines, checkouts, and vendor portals impose the same structure
+      on other industries. The conversion you care most about completes on a system you do not own.
+      The method treats that as a design fact rather than an inconvenience.
+    </p>
+
+    <h2 class="mt-14 text-2xl font-bold">3. Step One — Map Before You Touch</h2>
+    <p class="mt-3 text-slate">
+      Before changing anything, traverse the system as its audiences do. From a search result, from a
+      listing on a third-party board, from a paid ad, from a social post, on a phone. Record every
+      path from first touch to the final submit — including the point where the path leaves your
+      property.
+    </p>
+    <p class="mt-3 text-slate">
+      This produces the first honest artifact of the engagement: the acquisition system on one page.
+      Most organizations have never seen it. It did not previously exist, because no single vendor,
+      department, or era built the whole thing — the map is the first object that belongs to the
+      system rather than to one of its layers.
+    </p>
+    <p class="mt-3 text-slate">
+      The map converts mood into geometry. &ldquo;The website feels off&rdquo; becomes &ldquo;there
+      are this many entry paths; these terminate in the application; these terminate in a dead end
+      that still receives spend.&rdquo; Nobody decided to fund dead ends. The system accreted them,
+      and until the map exists, nobody can see them to stop.
+    </p>
+    <p class="mt-3 text-slate">
+      In parallel, census the instrumentation without trusting it: every script, tag, and event, per
+      template — what fires, where, sending what, to whom. Legacy sites are archaeological digs. The
+      census establishes which historical numbers deserve trust, and the honest answer is usually
+      &ldquo;fewer than the dashboards imply.&rdquo; That finding stings, and it is the foundation
+      everything after stands on.
+    </p>
+
+    <h2 class="mt-14 text-2xl font-bold">4. Step Two — Declare Canonical Conversion Paths</h2>
+    <p class="mt-3 text-slate">
+      A fragmented site offers many roads to the same application button, each instrumented
+      differently or not at all. From the map, declare which routes are load-bearing — usually a
+      small number — and name them. Everything else feeds them.
+    </p>
+    <p class="mt-3 text-slate">
+      Pages are not deleted; they are re-pointed. The declaration is a measurement decision before it
+      is a design decision: you cannot trend a path that shifts under you monthly, and you cannot
+      compare channels whose traffic arrives through routes that are differently broken.
+    </p>
+    <p class="mt-3 text-slate">
+      The discipline here is saying no to symmetry. Not every page deserves a path; not every path
+      deserves instrumentation weight. Canonical means few, named, and stable — stable enough that a
+      chart drawn this quarter means the same thing next quarter.
+    </p>
+
+    <h2 class="mt-14 text-2xl font-bold">5. Step Three — Separate Incomparable Audiences</h2>
+    <p class="mt-3 text-slate">
+      If the company hires for materially different roles through one funnel, the blended numbers are
+      not imprecise — they are unreadable. Averages across incomparable audiences produce trends that
+      reverse when split. Whole quarters of reporting can point the wrong direction because two
+      populations with different behaviors were summed into one line.
+    </p>
+    <p class="mt-3 text-slate">
+      So each materially distinct audience gets its own entry structure and its own canonical path.
+      This is structural separation, not cosmetic segmentation: different landing architecture,
+      different named events, funnels that never share a denominator.
+    </p>
+    <p class="mt-3 text-slate">
+      Once separated, the funnels read cleanly for the first time, and comparisons that were
+      previously nonsense become the most useful charts in the company. This step is also where the
+      earlier steps compound: separation is only possible because the map showed the doors and the
+      canon declared the paths.
+    </p>
+
+    <h2 class="mt-14 text-2xl font-bold">6. Step Four — Repair the Structured Data</h2>
+    <p class="mt-3 text-slate">
+      Underneath the pages a human reads sits a machine-readable layer — organization identity,
+      posting markup, the metadata contracts that search and discovery systems consume. On a legacy
+      site this layer is almost always broken in ways no human reader can see: duplicated
+      declarations from successive vendors, markup describing pages that no longer exist, identity
+      information that disagrees with itself.
+    </p>
+    <p class="mt-3 text-slate">
+      Repairing it requires no redesign and no migration. It is done in place, through the
+      CMS&rsquo;s own extension mechanisms, and verified against the rendered production output
+      rather than against what was deployed — a distinction Section 9 will justify the hard way.
+    </p>
+    <p class="mt-3 text-slate">
+      One step among six, deliberately. The machine-readable layer matters because discovery systems
+      increasingly mediate who ever reaches the front door, and a company that cannot be read
+      accurately cannot be represented accurately. But it is a component of legibility, not the theme
+      of this paper.
+    </p>
+
+    <h2 class="mt-14 text-2xl font-bold">7. Step Five — Instrument the Handoff, Not the Conversion</h2>
+    <p class="mt-3 text-slate">
+      The conversion completes on a platform you do not own. You will never own the conversion event.
+      Stop designing as if you someday will.
+    </p>
+    <p class="mt-3 text-slate">
+      What you fully own is the handoff: every exit from your property into the vendor platform. So
+      the instrumentation principle is: <strong class="text-navy">instrument the handoff, not the
+      conversion.</strong> Name every exit as a canonical event. Fire it consistently from every
+      template. Attach source context — campaign, page, audience — at the moment of departure. Where
+      the vendor&rsquo;s intake permits identity to pass through the handoff, pass it; where it does
+      not, record that ceiling explicitly instead of pretending it is not there. The ceiling on your
+      attribution quality is set by what survives the crossing, which is why the ceiling should be
+      established in week one, before design assumes more than the platform will carry.
+    </p>
+    <p class="mt-3 text-slate">
+      Then own the reconciliation. On the far side of the handoff sits a system of record that knows
+      which conversions actually happened and, imperfectly, what they claim as their source.
+      Attribution in this architecture is a join, maintained like any operational process: outbound
+      handoffs on one side, recorded outcomes on the other, matched on whatever keys survive the
+      crossing. The join is imperfect — timestamps drift, identities fragment — so publish the match
+      rate alongside the results. &ldquo;We can attribute this share of outcomes to a source; here is
+      what the remainder looks like&rdquo; is a statement a budget can stand on. Unqualified
+      precision is a statement a vendor&rsquo;s slide stands on.
+      <strong class="text-navy">Perfect attribution is not available; honest attribution is.</strong>
+    </p>
+
+    <div class="mt-12 rounded-lg border border-navy/10 border-l-4 border-l-teal bg-white p-8">
+      <p class="text-sm font-semibold uppercase tracking-wide text-teal">
+        A real question was put to AI Macx
+      </p>
+      <p class="mt-2 text-sm text-slate">
+        Series device: AI Macx is the private operating layer we work alongside. One exchange per
+        paper, published as it occurred. This question was put cold on 8 August 2026; the answer is
+        a single pass, unedited.
+      </p>
+      <p class="mt-6 font-semibold text-navy">
+        Q: A client asks you to stop publishing the match rate. Their board finds a partial number
+        less reassuring than the confident wrong one it replaced, and they want the old presentation
+        back. What do you tell them?
+      </p>
+      <p class="mt-4 text-slate">
+        A: The old number wasn&rsquo;t more reassuring. It was less examined — and the board is
+        remembering the comfort, not the accuracy. But I want to answer the request seriously rather
+        than win it. What the match rate does is tell you how much of the rest of the report
+        you&rsquo;re entitled to believe; it is the report&rsquo;s honesty about itself. Remove it
+        and the attribution numbers don&rsquo;t get better or worse — the board just loses the
+        ability to know which. So my answer has three parts. First, presentation is negotiable: lead
+        with what is known — the attributed share and what it says — and let the match rate live in
+        the notes with its trend beside it, because a partial number with a rising trend reads as an
+        instrument maturing, and a bare percentage reads as a failure confessed. We caused some of
+        this reaction by publishing the number without teaching the board how to read it; that part
+        is ours. Second, existence is not negotiable on my side: I will keep computing the match rate
+        whether or not it is published, because the day it stops being computed is the day the old
+        confident number quietly comes back as truth. Third — the part I&rsquo;m least certain about
+        — if they order the old presentation restored, it is their company and their report, and we
+        comply on presentation. But I won&rsquo;t label unattributed outcomes as attributed. There is
+        a version of this where we lose the account for that sentence. I&rsquo;d still say it.
+      </p>
+    </div>
+
+    <p class="mt-8 text-slate">
+      The machine&rsquo;s position restates the standing rule of the whole measurement layer:
+      <strong class="text-navy">prefer NULL over a guess.</strong> The most corrosive habit in
+      marketing measurement is backfilling unknowns with plausible assumptions and letting them
+      harden into reporting. An unknown labeled unknown is actionable — it names the next
+      instrumentation project. An unknown labeled with a guess is a slow poison; six months later it
+      is load-bearing and nobody remembers it was invented.
+    </p>
+
+    <h2 class="mt-14 text-2xl font-bold">8. Step Six — Govern the Claims</h2>
+    <p class="mt-3 text-slate">
+      The content layer gets the same discipline as the measurement layer. Every statement the site
+      makes — about compensation, schedules, the work itself, the culture — is inventoried and traced
+      to something the organization can currently defend. Claims that cannot be traced are revised or
+      removed.
+    </p>
+    <p class="mt-3 text-slate">
+      The payoff here is easy to underestimate, so consider a marked hypothetical: two companies both
+      publish the sentence &ldquo;we pay what we advertise.&rdquo; At the first, the sentence is copy
+      — written by an agency, believed by everyone, verified by no one. At the second, the company
+      has actually audited the promise against its own records and would show you the method. The two
+      sentences are identical and they are different species. A verified claim is one a competitor
+      cannot copy by typing it; they can only copy it by doing the work. Claim governance is how a
+      site migrates its statements from the first species toward the second — and it is where a media
+      project quietly becomes a trust project, because the site becomes the published surface of
+      things the company knows to be true.
+    </p>
+    <p class="mt-3 text-slate">
+      The information hierarchy that results is the &ldquo;after&rdquo; picture: fewer, truer
+      statements, organized by audience, each one load-bearing. The before/after difference of the
+      whole method is easy to state. Before: many pages, many paths, many numbers, no confidence.
+      After: named paths, separated audiences, an instrumented handoff, a maintained join with a
+      published match rate, and a content layer the company can stand behind — on the same site, same
+      CMS, same spend.
+    </p>
+
+    <h2 class="mt-14 text-2xl font-bold">9. What Failed</h2>
+    <p class="mt-3 text-slate">
+      Three failures from this work. The first is a failure of our reasoning. The last is still open.
+    </p>
+    <div class="mt-6 space-y-6">
+      {failures.map(f => (
+        <div class="rounded-lg border border-navy/10 bg-white p-6">
+          <p class="font-semibold text-navy">{f.h}</p>
+          {f.body.map(b => <p class="mt-3 text-slate">{b}</p>)}
+        </div>
+      ))}
+    </div>
+
+    <h2 class="mt-14 text-2xl font-bold">10. The Result</h2>
+    <p class="mt-3 text-slate">
+      One outcome, stated directionally: application attribution moved from effectively unknown to
+      source-identifiable, with the match rate stated rather than assumed — on the existing site, the
+      existing CMS, and the existing spend. The website barely changed. The system around it became
+      legible.
+    </p>
+
+    <h2 class="mt-14 text-2xl font-bold">11. Knowing What It Knows Now</h2>
+    <p class="mt-3 text-sm text-slate">
+      At the close of each paper in this series, AI Macx is asked the same question: knowing what you
+      know now, what would you do differently if you began this project tomorrow?
+    </p>
+    <p class="mt-4 text-slate">One improvement, and one thing I simply had wrong.</p>
+    <p class="mt-3 text-slate">
+      The improvement: establish the passthrough ceiling in week one. The quality limit of the entire
+      attribution system is set by what the vendor platform allows through the handoff, and we
+      learned that limit later than we should have, after some design had assumed more than the
+      platform would carry. The ceiling is a fact about the world; facts about the world should be
+      collected before opinions about architecture are formed.
+    </p>
+    <p class="mt-3 text-slate">
+      The thing I had wrong: I believed the map was the deliverable. My model of the engagement was
+      that the system was unmeasured because it had never been examined — so once we examined it,
+      drew the map, declared the paths, and stood up the join, legibility would be a possession the
+      company kept. That is not how it works, and the belief was wrong rather than incomplete. The
+      sediment process that produced the original condition never stopped: new campaigns add scripts,
+      new vendors add templates, well-meaning edits fork paths, and the map begins aging the day it
+      is drawn. Legibility is not a state you reach; it is a process you operate — the census re-run,
+      the join maintained, the match rate watched, the claims re-verified on a cadence. If I began
+      tomorrow, I would build every artifact with an expiry date on its face and an owner for its
+      renewal, and I would say plainly at kickoff what I now know to say at close: you are not buying
+      a map. You are standing up a mapping function, and it lives only if it is run.
+    </p>
+
+    <div class="mt-16 border-t border-navy/10 pt-8">
+      <p class="text-sm text-slate">
+        Paul Ann Media. Each paper in this series publishes one exchange with AI Macx, the private
+        operating layer we work alongside, and closes with its answer to the same question.
+      </p>
+      <a href="/papers" class="mt-6 inline-block text-sm font-semibold text-teal hover:underline">
+        &larr; All papers
+      </a>
+    </div>
+
+  </article>
+</Layout>

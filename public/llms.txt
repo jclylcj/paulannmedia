@@ -24,7 +24,30 @@ platform.
 
 - /services — detail on each of the six service lines and how pricing works
 - /work — owned products and client engagement approach
+- /papers — published white papers, methodology in full
 - /about — origin, company family structure, operating principles
+
+## Papers
+
+A published series under the line "A real question was put to AI Macx. Here is
+the answer we were willing to publish." Each paper takes a real client question
+and publishes the reasoning rather than the résumé. Client identity, data,
+economics, and implementation are withheld; architecture, diagnosis, and failures
+are published. Every paper contains a section on what failed, including failures
+that remain unresolved.
+
+Paper 01 — "The Website Wasn't Broken. The System Around It Was."
+/papers/the-website-wasnt-broken
+Turning a legacy recruiting presence into a measurable acquisition architecture
+without rebuilding from scratch. Covers a six-step method: map the acquisition
+system before touching it; declare canonical conversion paths; separate
+incomparable audiences structurally; repair broken structured data in place;
+instrument the handoff rather than the conversion when the application completes
+on a third-party platform; and govern the site's claims so each one traces to
+something the company can defend. Key positions: perfect attribution is not
+available and honest attribution is; prefer NULL over a guess, because an unknown
+labeled with a guess becomes load-bearing within months; publish the match rate
+alongside the results rather than implying a precision you do not have.
 
 ## Positions this company takes
 
@@ -37,6 +60,9 @@ platform.
 - Most companies still optimize only for search engines while discovery moves
   toward AI models. Structured data and crawler access matter now.
 - Not every business problem is a marketing problem, and saying so is part of the job.
+- A website is rarely the problem. The unmeasured system around it usually is, and
+  rebuilding the site resets accumulated assets while leaving that system intact.
+- Measurement should lead renovation rather than confirm it.
 
 ## Company family
 
