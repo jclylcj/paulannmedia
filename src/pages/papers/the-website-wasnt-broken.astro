@@ -1,5 +1,8 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import MediaSixStepMethod from '../../components/visuals/MediaSixStepMethod.astro';
+import MediaHandoffJoin from '../../components/visuals/MediaHandoffJoin.astro';
+import MediaInformationHierarchy from '../../components/visuals/MediaInformationHierarchy.astro';
 
 const title = "The Website Wasn't Broken. The System Around It Was.";
 const description = 'Turning a legacy recruiting presence into a measurable acquisition architecture without rebuilding from scratch.';
@@ -138,6 +141,8 @@ const failures = [
       The method treats that as a design fact rather than an inconvenience.
     </p>
 
+    <MediaSixStepMethod />
+
     <h2 class="mt-14 text-2xl font-bold">3. Step One — Map Before You Touch</h2>
     <p class="mt-3 text-slate">
       Before changing anything, traverse the system as its audiences do. From a search result, from a
@@ -248,6 +253,8 @@ const failures = [
       <strong class="text-navy">Perfect attribution is not available; honest attribution is.</strong>
     </p>
 
+    <MediaHandoffJoin />
+
     <div class="mt-12 rounded-lg border border-navy/10 border-l-4 border-l-teal bg-white p-8">
       <p class="text-sm font-semibold uppercase tracking-wide text-teal">
         A real question was put to AI Macx
@@ -317,6 +324,10 @@ const failures = [
       published match rate, and a content layer the company can stand behind — on the same site, same
       CMS, same spend.
     </p>
+
+    <MediaInformationHierarchy
+      entryLabels={["SEARCH", "JOB BOARD", "PAID AD", "SOCIAL", "DIRECT"]}
+    />
 
     <h2 class="mt-14 text-2xl font-bold">9. What Failed</h2>
     <p class="mt-3 text-slate">

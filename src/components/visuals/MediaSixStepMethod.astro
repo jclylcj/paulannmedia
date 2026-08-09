@@ -1,0 +1,58 @@
+---
+import DiagramFrame from "./DiagramFrame.astro";
+
+const steps = [
+  ["01", "Map"],
+  ["02", "Canonical paths"],
+  ["03", "Audience separation"],
+  ["04", "Schema repair"],
+  ["05", "Handoff instrumentation"],
+  ["06", "Claim governance"],
+];
+const xs = [25, 185, 345, 505, 665, 825];
+---
+
+<DiagramFrame
+  minWidth={760}
+  ariaLabel="Paul Ann Media six-step architecture method."
+  caption="Navy = governed structure · teal = forward delivery path · gold = the measurement pivot · dashed slate = measurement returning to inform renovation."
+>
+  <svg viewBox="0 0 1000 260" role="img"
+    aria-label="Six steps move from mapping through claim governance. Teal arrows show forward execution. A dashed return path from handoff instrumentation back toward the earlier architecture marks the reversal that measurement should lead renovation rather than merely follow it.">
+    <defs>
+      <marker id="media-arrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+        <path d="M0,0 L7,3.5 L0,7 Z" fill="#2AA09A" />
+      </marker>
+      <marker id="media-return" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+        <path d="M0,0 L7,3.5 L0,7 Z" fill="#7C8A8A" />
+      </marker>
+    </defs>
+    <rect width="1000" height="260" rx="4" fill="#F5F0EB" />
+
+    {steps.map((step, i) => (
+      <g>
+        <rect x={xs[i]} y="82" width="135" height="70" rx="4" fill="#FFFFFF"
+          stroke="#1A2F3D" stroke-width="1.7" />
+        <text x={xs[i] + 14} y="103" fill="#2AA09A" font-size="9.5" font-weight="700"
+          letter-spacing="1" font-family="ui-sans-serif, system-ui, sans-serif">{step[0]}</text>
+        <text x={xs[i] + 14} y="126" fill="#1A2F3D" font-size="12" font-weight="700"
+          font-family="ui-sans-serif, system-ui, sans-serif">{step[1]}</text>
+        {i < steps.length - 1 && (
+          <line x1={xs[i] + 135} y1="117" x2={xs[i+1] - 10} y2="117"
+            stroke="#2AA09A" stroke-width="2" marker-end="url(#media-arrow)" />
+        )}
+      </g>
+    ))}
+
+    <circle cx={xs[4] + 68} cy="54" r="6.5" fill="#D4883A" />
+    <text x={xs[4] + 68} y="39" text-anchor="middle" fill="#1A2F3D"
+      font-size="10" font-weight="700" letter-spacing=".5"
+      font-family="ui-sans-serif, system-ui, sans-serif">MEASUREMENT</text>
+
+    <path d={`M ${xs[4]+68} 47 C 650 8, 350 10, ${xs[1]+67} 62`}
+      fill="none" stroke="#7C8A8A" stroke-width="1.4" stroke-dasharray="3 3"
+      marker-end="url(#media-return)" />
+    <text x="468" y="24" text-anchor="middle" fill="#7C8A8A" font-size="9.5"
+      font-family="ui-sans-serif, system-ui, sans-serif">measurement leads the next renovation</text>
+  </svg>
+</DiagramFrame>

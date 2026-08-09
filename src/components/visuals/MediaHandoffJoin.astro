@@ -1,0 +1,59 @@
+---
+import DiagramFrame from "./DiagramFrame.astro";
+
+interface Props {
+  matchRate?: number;
+}
+
+const suppliedRate = Astro.props.matchRate;
+const matchRate = Math.max(20, Math.min(95, suppliedRate ?? 72));
+const unmatchedRate = 100 - matchRate;
+const matchLabel = suppliedRate == null ? "SCHEMATIC SHARE" : `${matchRate}% MATCHED`;
+const unmatchedLabel = suppliedRate == null ? "UNMATCHED REMAINDER" : `${unmatchedRate}% UNMATCHED`;
+---
+
+<DiagramFrame
+  minWidth={740}
+  ariaLabel="Instrumented handoff and reconciliation join between owned property and a vendor system of record."
+  caption="Teal = instrumented outbound events · navy = recorded far-side outcomes · gold = the join operation · grey = the unmatched remainder that honest attribution reports. If no matchRate prop is supplied, the share bar is schematic rather than a claimed rate."
+>
+  <svg viewBox="0 0 1000 330" role="img"
+    aria-label={`Instrumented exit events from the owned property are joined to recorded outcomes from the vendor system of record. The join visibly produces a matched share and an unmatched remainder. ${suppliedRate == null ? "The displayed share is schematic until a measured matchRate is supplied." : `The supplied match rate is ${matchRate} percent.`}`}>
+    <defs>
+      <marker id="join-forward" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#2AA09A" /></marker>
+      <marker id="join-return" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#7C8A8A" /></marker>
+    </defs>
+    <rect width="1000" height="330" rx="4" fill="#F5F0EB" />
+
+    <text x="115" y="42" text-anchor="middle" fill="#1A2F3D" font-size="12" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">OWNED PROPERTY</text>
+    <rect x="35" y="60" width="160" height="115" rx="4" fill="#FFFFFF" stroke="#1A2F3D" stroke-width="1.6" />
+    <text x="115" y="86" text-anchor="middle" fill="#7C8A8A" font-size="8.5" font-weight="700" letter-spacing=".6" font-family="ui-sans-serif, system-ui, sans-serif">INSTRUMENTED EXIT EVENTS</text>
+    {[0,1,2,3,4,5].map(i => <circle cx={65 + (i%3)*50} cy={112 + Math.floor(i/3)*36} r="6" fill="#2AA09A" />)}
+
+    <line x1="195" y1="117" x2="382" y2="117" stroke="#2AA09A" stroke-width="2.4" marker-end="url(#join-forward)" />
+    <text x="286" y="101" text-anchor="middle" fill="#7C8A8A" font-size="8.5" font-family="ui-sans-serif, system-ui, sans-serif">boundary events</text>
+
+    <rect x="395" y="83" width="150" height="68" rx="4" fill="#FFFFFF" stroke="#1A2F3D" stroke-width="1.7" />
+    <circle cx="470" cy="103" r="6.5" fill="#D4883A" />
+    <text x="470" y="128" text-anchor="middle" fill="#1A2F3D" font-size="13" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">RECONCILIATION JOIN</text>
+    <text x="470" y="142" text-anchor="middle" fill="#7C8A8A" font-size="8.5" font-family="ui-sans-serif, system-ui, sans-serif">event key ↔ outcome key</text>
+
+    <line x1="805" y1="117" x2="558" y2="117" stroke="#7C8A8A" stroke-width="1.5" stroke-dasharray="3 3" marker-end="url(#join-return)" />
+    <text x="682" y="101" text-anchor="middle" fill="#7C8A8A" font-size="8.5" font-family="ui-sans-serif, system-ui, sans-serif">recorded outcomes return to the join</text>
+
+    <text x="875" y="42" text-anchor="middle" fill="#1A2F3D" font-size="12" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">VENDOR / SYSTEM OF RECORD</text>
+    <rect x="805" y="60" width="160" height="115" rx="4" fill="#FFFFFF" stroke="#1A2F3D" stroke-width="1.6" />
+    <text x="885" y="86" text-anchor="middle" fill="#7C8A8A" font-size="8.5" font-weight="700" letter-spacing=".6" font-family="ui-sans-serif, system-ui, sans-serif">RECORDED OUTCOMES</text>
+    {[0,1,2,3,4,5].map(i => <circle cx={835 + (i%3)*50} cy={112 + Math.floor(i/3)*36} r="6" fill="#1A2F3D" />)}
+
+    <text x="500" y="211" text-anchor="middle" fill="#1A2F3D" font-size="11" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">JOIN RESULT</text>
+    <rect x="170" y="230" width="660" height="42" rx="4" fill="#FFFFFF" stroke="#1A2F3D" stroke-width="1.2" />
+    <rect x="171" y="231" width={658 * matchRate / 100} height="40" rx="3" fill="#2AA09A" />
+    <rect x={171 + 658 * matchRate / 100} y="231" width={658 * unmatchedRate / 100} height="40" fill="#CFC8C0" />
+    <text x={171 + (658 * matchRate / 100)/2} y="256" text-anchor="middle" fill="#1A2F3D" font-size="10" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">{matchLabel}</text>
+    <text x={171 + 658 * matchRate / 100 + (658 * unmatchedRate / 100)/2} y="250" text-anchor="middle" fill="#1A2F3D" font-size="9.2" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">{unmatchedLabel}</text>
+    <text x={171 + 658 * matchRate / 100 + (658 * unmatchedRate / 100)/2} y="264" text-anchor="middle" fill="#7C8A8A" font-size="8" font-family="ui-sans-serif, system-ui, sans-serif">do not hide the gap</text>
+
+    {suppliedRate == null && <text x="500" y="298" text-anchor="middle" fill="#7C8A8A" font-size="8.5" font-style="italic" font-family="ui-sans-serif, system-ui, sans-serif">schematic width — pass a measured matchRate prop before publishing a rate</text>}
+  </svg>
+</DiagramFrame>

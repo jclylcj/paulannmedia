@@ -1,0 +1,83 @@
+---
+import DiagramFrame from "./DiagramFrame.astro";
+
+interface Props {
+  entryLabels?: string[];
+  canonicalLabels?: string[];
+  audienceLabels?: [string, string];
+}
+
+const entryLabels = Astro.props.entryLabels ?? ["ENTRY 1", "ENTRY 2", "ENTRY 3", "ENTRY 4", "ENTRY 5"];
+const canonicalLabels = Astro.props.canonicalLabels ?? ["CANONICAL PATH A", "CANONICAL PATH B", "CANONICAL PATH C"];
+const audienceLabels = Astro.props.audienceLabels ?? ["AUDIENCE A", "AUDIENCE B"];
+---
+
+<DiagramFrame
+  minWidth={720}
+  ariaLabel="Before and after information hierarchy showing many inconsistent entry paths collapsing into one funnel versus canonical paths separated by audience."
+  caption="Before: many entry paths, inconsistent instrumentation, one shared funnel, and funded dead ends. After: named canonical paths, audiences separated structurally, each with its own funnel and denominator."
+>
+  <svg viewBox="0 0 1000 350" role="img"
+    aria-label="Before shows five labelled entry paths with different instrumentation patterns converging chaotically into one undifferentiated funnel, while two dead ends still receive spend. After shows three named canonical paths routed into two structurally separated audiences, each with its own funnel so they do not share a denominator.">
+    <defs>
+      <marker id="hier-teal" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#2AA09A" /></marker>
+      <marker id="hier-grey" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0,0 L7,3.5 L0,7 Z" fill="#CFC8C0" /></marker>
+    </defs>
+    <rect width="1000" height="350" rx="4" fill="#F5F0EB" />
+
+    <text x="245" y="35" text-anchor="middle" fill="#1A2F3D" font-size="14" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">BEFORE</text>
+    <text x="245" y="52" text-anchor="middle" fill="#7C8A8A" font-size="8.5" font-family="ui-sans-serif, system-ui, sans-serif">many paths · inconsistent measurement · one denominator</text>
+    <rect x="30" y="67" width="430" height="240" rx="4" fill="#FFFFFF" stroke="#E8E2DC" stroke-width="1.2" />
+
+    {entryLabels.slice(0,5).map((label,i) => (
+      <g>
+        <rect x="48" y={84+i*38} width="88" height="24" rx="4" fill="none" stroke="#1A2F3D" stroke-width="1.2" />
+        <text x="92" y={100+i*38} text-anchor="middle" fill="#1A2F3D" font-size="8.3" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">{label}</text>
+      </g>
+    ))}
+
+    <path d="M136 96 C205 95,240 145,320 165" fill="none" stroke="#2AA09A" stroke-width="2" marker-end="url(#hier-teal)" />
+    <path d="M136 134 C210 120,250 178,320 170" fill="none" stroke="#7C8A8A" stroke-width="1.4" stroke-dasharray="3 3" marker-end="url(#hier-grey)" />
+    <path d="M136 172 C210 210,250 145,320 176" fill="none" stroke="#2AA09A" stroke-width="1.3" marker-end="url(#hier-teal)" />
+    <path d="M136 210 C190 210,205 238,220 250" fill="none" stroke="#CFC8C0" stroke-width="1.4" stroke-dasharray="3 3" />
+    <path d="M136 248 C190 248,200 276,220 286" fill="none" stroke="#CFC8C0" stroke-width="1.4" stroke-dasharray="3 3" />
+
+    <path d="M315 140 H420 L390 232 H345 Z" fill="none" stroke="#1A2F3D" stroke-width="1.7" />
+    <text x="367" y="183" text-anchor="middle" fill="#1A2F3D" font-size="9.3" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">ONE</text>
+    <text x="367" y="196" text-anchor="middle" fill="#1A2F3D" font-size="9.3" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">FUNNEL</text>
+    <text x="367" y="217" text-anchor="middle" fill="#7C8A8A" font-size="7.8" font-family="ui-sans-serif, system-ui, sans-serif">shared denominator</text>
+
+    <rect x="230" y="241" width="72" height="23" rx="4" fill="none" stroke="#CFC8C0" stroke-width="1.2" stroke-dasharray="3 3" />
+    <text x="266" y="256" text-anchor="middle" fill="#7C8A8A" font-size="7.5" font-family="ui-sans-serif, system-ui, sans-serif">DEAD END</text>
+    <rect x="230" y="276" width="72" height="23" rx="4" fill="none" stroke="#CFC8C0" stroke-width="1.2" stroke-dasharray="3 3" />
+    <text x="266" y="291" text-anchor="middle" fill="#7C8A8A" font-size="7.5" font-family="ui-sans-serif, system-ui, sans-serif">STILL FUNDED</text>
+
+    <circle cx="500" cy="183" r="7" fill="#D4883A" />
+
+    <text x="755" y="35" text-anchor="middle" fill="#1A2F3D" font-size="14" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">AFTER</text>
+    <text x="755" y="52" text-anchor="middle" fill="#7C8A8A" font-size="8.5" font-family="ui-sans-serif, system-ui, sans-serif">named paths · separated audiences · separate denominators</text>
+    <rect x="540" y="67" width="430" height="240" rx="4" fill="#FFFFFF" stroke="#E8E2DC" stroke-width="1.2" />
+
+    {canonicalLabels.slice(0,3).map((label,i) => (
+      <g>
+        <rect x="560" y={95+i*61} width="116" height="28" rx="4" fill="none" stroke="#1A2F3D" stroke-width="1.3" />
+        <text x="618" y={113+i*61} text-anchor="middle" fill="#1A2F3D" font-size="8.2" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">{label}</text>
+      </g>
+    ))}
+
+    <line x1="755" y1="80" x2="755" y2="292" stroke="#CFC8C0" stroke-width="1.2" stroke-dasharray="3 3" />
+    <text x="815" y="92" text-anchor="middle" fill="#7C8A8A" font-size="8.2" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">{audienceLabels[0]}</text>
+    <text x="910" y="92" text-anchor="middle" fill="#7C8A8A" font-size="8.2" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">{audienceLabels[1]}</text>
+
+    <path d="M676 109 H785" stroke="#2AA09A" stroke-width="2" marker-end="url(#hier-teal)" />
+    <path d="M676 170 H785" stroke="#2AA09A" stroke-width="2" marker-end="url(#hier-teal)" />
+    <path d="M676 231 C745 231,805 215,880 215" fill="none" stroke="#2AA09A" stroke-width="2" marker-end="url(#hier-teal)" />
+
+    <path d="M785 110 H850 L838 172 H797 Z" fill="none" stroke="#1A2F3D" stroke-width="1.5" />
+    <path d="M875 184 H945 L933 246 H887 Z" fill="none" stroke="#1A2F3D" stroke-width="1.5" />
+    <text x="818" y="135" text-anchor="middle" fill="#1A2F3D" font-size="8.5" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">FUNNEL A</text>
+    <text x="910" y="209" text-anchor="middle" fill="#1A2F3D" font-size="8.5" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">FUNNEL B</text>
+    <text x="818" y="158" text-anchor="middle" fill="#7C8A8A" font-size="7.3" font-family="ui-sans-serif, system-ui, sans-serif">own denominator</text>
+    <text x="910" y="232" text-anchor="middle" fill="#7C8A8A" font-size="7.3" font-family="ui-sans-serif, system-ui, sans-serif">own denominator</text>
+  </svg>
+</DiagramFrame>
