@@ -54,6 +54,6 @@ const unmatchedLabel = suppliedRate == null ? "UNMATCHED REMAINDER" : `${unmatch
     <text x={171 + 658 * matchRate / 100 + (658 * unmatchedRate / 100)/2} y="250" text-anchor="middle" fill="#1A2F3D" font-size="9.2" font-weight="700" font-family="ui-sans-serif, system-ui, sans-serif">{unmatchedLabel}</text>
     <text x={171 + 658 * matchRate / 100 + (658 * unmatchedRate / 100)/2} y="264" text-anchor="middle" fill="#7C8A8A" font-size="8" font-family="ui-sans-serif, system-ui, sans-serif">do not hide the gap</text>
 
-    {suppliedRate == null && <text x="500" y="298" text-anchor="middle" fill="#7C8A8A" font-size="8.5" font-style="italic" font-family="ui-sans-serif, system-ui, sans-serif">schematic width — pass a measured matchRate prop before publishing a rate</text>}
+    {suppliedRate == null && <text x="500" y="298" text-anchor="middle" fill="#7C8A8A" font-size="8.5" font-style="italic" font-family="ui-sans-serif, system-ui, sans-serif">schematic width ... pass a measured matchRate prop before publishing a rate</text>}
   </svg>
 </DiagramFrame>
