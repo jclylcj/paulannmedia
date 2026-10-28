@@ -11,8 +11,8 @@ const services = [
 ];
 ---
 <Layout title="Paul Ann Media - An AI-Native Media Group">
-  <section class="relative overflow-hidden bg-navy text-cream">
-    <div class="relative z-10 mx-auto max-w-6xl px-5 py-16 lg:py-32">
+  <section class="relative flex flex-col overflow-hidden bg-navy text-cream lg:block">
+    <div class="relative z-10 mx-auto w-full max-w-6xl px-5 pt-6 pb-14 sm:pt-10 sm:pb-16 lg:py-32">
       <div class="max-w-xl lg:max-w-lg xl:max-w-xl">
       <p class="text-sm font-semibold uppercase tracking-widest text-teal">Paul Ann Media</p>
       <h1 class="mt-5 text-4xl font-bold leading-tight sm:text-5xl text-balance">
@@ -28,7 +28,7 @@ const services = [
       </a>
       </div>
     </div>
-    <div class="relative h-64 sm:h-80 lg:absolute lg:inset-0 lg:h-full">
+    <div class="relative order-first h-64 sm:h-80 lg:order-none lg:absolute lg:inset-0 lg:h-full">
       <img
         src="/media/hero-pam-r2-1900.webp"
         srcset="/media/hero-pam-r2-1000.webp 1000w, /media/hero-pam-r2-1900.webp 1900w"
@@ -39,6 +39,7 @@ const services = [
         fetchpriority="high"
         class="h-full w-full object-cover"
       />
+      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-20 lg:hidden" style="background: linear-gradient(180deg, rgba(26,47,61,0) 0%, rgba(26,47,61,1) 100%)"></div>
       <div class="pointer-events-none absolute inset-0 hidden lg:block" style="background: linear-gradient(90deg, rgba(26,47,61,0.95) 0%, rgba(26,47,61,0.88) 38%, rgba(26,47,61,0.55) 58%, rgba(26,47,61,0) 78%)"></div>
     </div>
   </section>
