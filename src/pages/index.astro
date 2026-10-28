@@ -11,11 +11,12 @@ const services = [
 ];
 ---
 <Layout title="Paul Ann Media - An AI-Native Media Group">
-  <section class="bg-navy text-cream">
-    <div class="mx-auto max-w-4xl px-5 py-24">
+  <section class="relative overflow-hidden bg-navy text-cream">
+    <div class="relative z-10 mx-auto max-w-6xl px-5 py-16 lg:py-32">
+      <div class="max-w-xl lg:max-w-lg xl:max-w-xl">
       <p class="text-sm font-semibold uppercase tracking-widest text-teal">Paul Ann Media</p>
-      <h1 class="mt-5 text-4xl font-bold leading-tight sm:text-5xl">
-        Marketing built for how<br />business really runs.
+      <h1 class="mt-5 text-4xl font-bold leading-tight sm:text-5xl text-balance">
+        Marketing built for how business really runs.
       </h1>
       <p class="mt-6 max-w-2xl text-lg text-slate-light">
         A full-service media group, AI-native from the ground up. We build the audience,
@@ -25,6 +26,20 @@ const services = [
          class="mt-9 inline-block rounded bg-teal px-8 py-3 font-semibold text-navy hover:bg-teal-light transition-colors">
         Start a Conversation
       </a>
+      </div>
+    </div>
+    <div class="relative h-64 sm:h-80 lg:absolute lg:inset-0 lg:h-full">
+      <img
+        src="/media/hero-pam-r2-1900.webp"
+        srcset="/media/hero-pam-r2-1000.webp 1000w, /media/hero-pam-r2-1900.webp 1900w"
+        sizes="(min-width: 1024px) 100vw, 170vw"
+        alt="A worker checks a bin in a warehouse aisle in early-morning light"
+        width="1900"
+        height="830"
+        fetchpriority="high"
+        class="h-full w-full object-cover"
+      />
+      <div class="pointer-events-none absolute inset-0 hidden lg:block" style="background: linear-gradient(90deg, rgba(26,47,61,0.95) 0%, rgba(26,47,61,0.88) 38%, rgba(26,47,61,0.55) 58%, rgba(26,47,61,0) 78%)"></div>
     </div>
   </section>
 
