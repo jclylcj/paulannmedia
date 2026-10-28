@@ -1,24 +1,49 @@
 ---
 const links = [
-  { href: '/services', label: 'Services' },
-  { href: '/work', label: 'Work' },
-  { href: '/papers', label: 'Papers' },
-  { href: '/about', label: 'About' },
+  { href: '/services/', label: 'Services' },
+  { href: '/work/', label: 'Work' },
+  { href: '/papers/', label: 'Papers' },
+  { href: '/about/', label: 'About' }
 ];
 ---
-<header class="bg-navy text-cream">
-  <nav class="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-    <a href="/" aria-label="Paul Ann Media home" class="flex items-center">
+<header class="relative z-40 bg-navy text-cream">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-5 py-4" aria-label="Main">
+    <a href="/" aria-label="Paul Ann Media home" class="flex min-h-11 items-center">
       <img src="/logo.svg" alt="Paul Ann Media" class="h-14 w-auto" width="1200" height="360" />
     </a>
-    <div class="hidden gap-7 text-sm md:flex">
+    <div class="hidden items-center gap-6 text-sm md:flex">
       {links.map(l => (
-        <a href={l.href} class="hover:text-teal transition-colors">{l.label}</a>
+        <a href={l.href} class="inline-flex min-h-11 items-center hover:text-teal transition-colors">{l.label}</a>
       ))}
     </div>
     <a href="/#contact"
-       class="rounded bg-teal px-4 py-2 text-sm font-semibold text-navy hover:bg-teal-light transition-colors">
+       class="hidden min-h-11 items-center rounded border border-teal px-4 text-sm font-semibold text-teal hover:bg-teal hover:text-navy transition-colors md:inline-flex">
       Start a Conversation
     </a>
+    <details class="group relative md:hidden" data-menu>
+      <summary class="flex h-11 w-11 cursor-pointer list-none items-center justify-center rounded border border-cream/25 hover:border-teal [&::-webkit-details-marker]:hidden">
+        <span class="sr-only">Menu</span>
+        <svg class="h-5 w-5 group-open:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        <svg class="hidden h-5 w-5 group-open:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+      </summary>
+      <div class="absolute right-0 top-full z-50 mt-3 w-64 rounded-lg border border-cream/10 bg-navy-deep p-2 shadow-2xl">
+        {links.map(l => (
+          <a href={l.href} class="flex min-h-11 items-center rounded px-4 text-base hover:bg-navy hover:text-teal">{l.label}</a>
+        ))}
+        <a href="/#contact" class="mt-2 flex min-h-11 items-center justify-center rounded bg-teal px-4 font-semibold text-navy hover:bg-teal-light">Start a Conversation</a>
+      </div>
+    </details>
   </nav>
 </header>
+<script>
+  const menus = document.querySelectorAll<HTMLDetailsElement>('details[data-menu]');
+  menus.forEach((d) => {
+    d.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => d.removeAttribute('open')));
+  });
+  document.addEventListener('click', (e) => {
+    menus.forEach((d) => { if (d.open && !d.contains(e.target as Node)) d.removeAttribute('open'); });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') menus.forEach((d) => d.removeAttribute('open'));
+  });
+</script>

@@ -1,0 +1,89 @@
+---
+// Draft for owner review. Not legal advice; have counsel read it.
+import Layout from '../../layouts/Layout.astro';
+---
+<Layout
+  title="Privacy - Paul Ann Media"
+  description="What Paul Ann Media collects through this website, why, and how to have it deleted."
+>
+  <article class="mx-auto max-w-3xl px-5 py-16">
+    <h1 class="text-4xl font-bold">Privacy</h1>
+    <p class="mt-4 text-lg text-slate">Plain English. What this website collects, why, and how to make us delete it.</p>
+    <p class="mt-2 text-sm text-slate">Effective November 1, 2026.</p>
+
+    <h2 class="mt-12 scroll-mt-24 text-2xl font-bold">What we collect</h2>
+    <ul class="mt-4 list-disc space-y-2 pl-5 text-slate">
+      <li><strong class="text-navy">What you send us.</strong> When you email us about a project, we get your name, email address and whatever you put in the message.</li>
+      <li><strong class="text-navy">Privacy requests.</strong> If you use the form below: your email, what you are asking for, and any details you add.</li>
+      <li><strong class="text-navy">What any website receives.</strong> Our host (Netlify) records standard request data, like IP address, browser type and the page asked for, to keep the site running and secure.</li>
+    </ul>
+    <p class="mt-4 text-slate">We don't add analytics, ad trackers or tracking cookies. There are no sign-up or payment forms on this site.</p>
+
+    <h2 class="mt-12 scroll-mt-24 text-2xl font-bold">What we use it for</h2>
+    <ul class="mt-4 list-disc space-y-2 pl-5 text-slate">
+      <li>Answering you.</li>
+      <li>Following up on a conversation you started. You can tell us to stop at any time.</li>
+      <li>Keeping the site secure and working.</li>
+    </ul>
+
+    <h2 class="mt-12 scroll-mt-24 text-2xl font-bold">Who sees it</h2>
+    <ul class="mt-4 list-disc space-y-2 pl-5 text-slate">
+      <li><strong class="text-navy">Companies that run the site and our email for us,</strong> only to provide that service.</li>
+      <li><strong class="text-navy">Anyone the law requires,</strong> such as a court order.</li>
+    </ul>
+    <p class="mt-4 text-slate">We don't sell your information, and we don't share it for advertising.</p>
+
+    <h2 class="mt-12 scroll-mt-24 text-2xl font-bold">How long we keep it</h2>
+    <p class="mt-4 text-slate">Inquiries are kept for up to 24 months after we last talked with you, then deleted, unless you become a client. Ask us to delete sooner and we will.</p>
+
+    <h2 class="mt-12 scroll-mt-24 text-2xl font-bold">Your choices</h2>
+    <ul class="mt-4 list-disc space-y-2 pl-5 text-slate">
+      <li>See what we have about you.</li>
+      <li>Correct it.</li>
+      <li>Have it deleted.</li>
+      <li>Stop hearing from us.</li>
+    </ul>
+    <p class="mt-4 text-slate">We give these rights to everyone, wherever you live. We'll answer within 30 days.</p>
+
+    <h2 class="mt-12 scroll-mt-24 text-2xl font-bold">Clients</h2>
+    <p class="mt-4 text-slate">Work we do for clients is covered by the agreement we sign with each client, not by this page.</p>
+
+    <h2 class="mt-12 scroll-mt-24 text-2xl font-bold">Changes</h2>
+    <p class="mt-4 text-slate">If this page changes in a way that matters, we'll update the date at the top.</p>
+
+    <h2 id="contact" class="mt-12 scroll-mt-24 text-2xl font-bold">Ask us</h2>
+    <p class="mt-4 text-slate">Paul Ann Media is a Trimmie Holdings company. Use this form for anything on this page.</p>
+    <form
+      name="privacy-request"
+      method="POST"
+      data-netlify="true"
+      netlify-honeypot="company-website"
+      action="/privacy/sent/"
+      class="mt-6 space-y-4 rounded-lg border border-navy/10 bg-white p-5 sm:p-6"
+    >
+      <input type="hidden" name="form-name" value="privacy-request" />
+      <p class="hidden"><label>Leave this blank: <input name="company-website" /></label></p>
+      <label class="block text-sm font-medium text-navy">Your email
+        <input name="email" type="email" required autocomplete="email"
+          class="mt-1 w-full min-h-11 rounded border border-navy/20 bg-white px-3 text-navy focus:border-navy focus:outline-none" />
+      </label>
+      <label class="block text-sm font-medium text-navy">What you want
+        <select name="request" required
+          class="mt-1 w-full min-h-11 rounded border border-navy/20 bg-white px-3 text-navy focus:border-navy focus:outline-none">
+          <option value="">Select one</option>
+          <option>See what you have about me</option>
+          <option>Correct my information</option>
+          <option>Delete my information</option>
+          <option>Stop contacting me</option>
+          <option>Something else</option>
+        </select>
+      </label>
+      <label class="block text-sm font-medium text-navy">Details (optional)
+        <textarea name="details" rows="3"
+          class="mt-1 w-full rounded border border-navy/20 bg-white px-3 py-2 text-navy focus:border-navy focus:outline-none"></textarea>
+      </label>
+      <button type="submit" class="min-h-11 rounded bg-teal px-6 font-semibold text-navy hover:bg-teal-light">Send request</button>
+      <p class="text-xs text-slate">We use this only to answer your request.</p>
+    </form>
+  </article>
+</Layout>

@@ -3,7 +3,8 @@
 @theme {
   --color-navy: #1A2F3D;
   --color-navy-deep: #12222C;
-  --color-teal: #2AA09A;
+  --color-teal: #33ADA6; /* was #2AA09A; 5:1 on navy as text and as a fill under navy text */
+  --color-teal-ink: #1F7672; /* text on cream and white (4.6:1+) */
   --color-teal-light: #46BDB6;
   --color-gold: #D4883A;
   --color-cream: #F5F0EB;
