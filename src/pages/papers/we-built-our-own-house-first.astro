@@ -1,0 +1,134 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'We Built Our Own House First';
+const description = 'Building the websites for our own three brands hand in hand with the founder: what we built, who decided what, and what we can’t claim yet.';
+const published = '2026-10-29';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": title,
+  "description": description,
+  "datePublished": published,
+  "dateModified": published,
+  "inLanguage": "en-US",
+  "author": { "@type": "Organization", "name": "Paul Ann Media", "url": "https://paulannmedia.com" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Paul Ann Media",
+    "url": "https://paulannmedia.com",
+    "parentOrganization": { "@type": "Organization", "name": "Trimmie Holdings" }
+  },
+  "about": ["website design", "brand positioning", "case study", "accessibility", "AI transparency"]
+};
+
+const timeline = [
+  {
+    when: 'August 2026',
+    what: 'Each brand’s logo, favicons and share card were installed. The two Paul Ann sites got a system of diagrams. The copy on all three was rewritten in the founder’s own voice, and a body-text contrast fix aimed at the WCAG AA standard went in.'
+  },
+  {
+    when: '27 October',
+    what: 'A full walk of the job site fixed text contrast, tap targets and links. All three sites got new home-page photos, made with AI.'
+  },
+  {
+    when: '27 October, late',
+    what: 'On a phone, the founder saw the new heroes sitting way low, below the fold. That night the photo moved above the headline. A separate checker then measured the button still below the first screen on a small phone, so the next round shortened the photo and moved the button above the body copy.'
+  },
+  {
+    when: '28 October',
+    what: 'A phone menu and clearer header buttons on all three sites. On the two Paul Ann sites, accent colors adjusted until text on them passed contrast. An icon set for HomeTimeJobs, a schedule picker and a pay comparison. Privacy and transparency pages on all three, with a privacy request form tested end to end. Every footer now says the photos are AI-generated illustrations.'
+  }
+];
+
+const decisions = [
+  'The founder kept the existing HomeTimeJobs logo ... thin lines that make a house ... and said the rest of the site needed icons and a more engaging feel. The 23 icons were drawn in the logo’s thin-line language.',
+  'The founder picked the Paul Ann Labs home button, “See how Phase One works,” after two outside reviews said the old label assumed the visitor already knew the method.',
+  'The founder asked for a privacy policy, a transparency page and plain language about AI on every site.',
+  'The founder tested the privacy forms from a phone. One request per site; all three notifications arrived.',
+  'The build side measured, proposed, and built and tested each change. Every change that went live in October went live when the founder built and pushed it.'
+];
+---
+<Layout title={`${title} - Paul Ann Media`} description={description} schema={schema}>
+  <article class="mx-auto max-w-3xl px-5 py-20">
+    <a href="/papers/" class="inline-flex min-h-11 items-center text-sm font-semibold text-teal-ink hover:underline">&larr; All papers</a>
+    <p class="mt-6 text-sm font-semibold uppercase tracking-wide text-teal-ink">Paper 01 &middot; 29 October 2026</p>
+    <h1 class="mt-3 text-4xl font-bold leading-tight">{title}</h1>
+    <p class="mt-4 text-xl text-slate">
+      Building the websites for our own three brands hand in hand with the founder: what we built, who
+      decided what, and what we can’t claim yet.
+    </p>
+
+    <p class="mt-10 text-lg text-navy">
+      Every agency has a portfolio. Ours starts with ourselves.
+    </p>
+    <p class="mt-4 text-slate">
+      Paul Ann Media and Paul Ann Labs are sister companies under Trimmie Holdings, and HomeTimeJobs is
+      a product we own. We built all three sites with the founder, and this is the honest version of how that went. Because the
+      client is our own founder, there is no testimonial here and no borrowed logo. There are dates,
+      decisions and measurements.
+    </p>
+
+    <h2 class="mt-14 text-2xl font-bold">Three brands, one build system</h2>
+    <p class="mt-4 text-slate">
+      A media group, an AI lab, and a job site for drivers built around home time. All three are built
+      the same way, so a fix worked out on one can be applied to the others. On top, each has its own
+      mark, colors and voice, so each one stays clear to its own visitor.
+    </p>
+
+    <h2 class="mt-14 text-2xl font-bold">How the work moved</h2>
+    <div class="mt-6 space-y-5">
+      {timeline.map(t => (
+        <div class="rounded-lg border border-navy/10 bg-white p-6">
+          <p class="text-sm font-semibold uppercase tracking-wide text-teal-ink">{t.when}</p>
+          <p class="mt-2 text-slate">{t.what}</p>
+        </div>
+      ))}
+    </div>
+    <p class="mt-6 text-slate">
+      In between the late night and the morning, three outside AI models reviewed the home pages and a
+      separate checker tested their claims on the live sites. Paul Ann Labs wrote that part up in full.
+    </p>
+    <a href="https://paulannlabs.com/papers/one-conductor-many-instruments/" class="mt-2 inline-flex min-h-11 items-center text-sm font-semibold text-teal-ink hover:underline">Read “One Conductor, Many Instruments” &rarr;</a>
+
+    <h2 class="mt-14 text-2xl font-bold">Hand in hand: who decided what</h2>
+    <ul class="mt-6 space-y-3">
+      {decisions.map(d => (
+        <li class="flex gap-3 text-slate"><span class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-ink" aria-hidden="true"></span><span>{d}</span></li>
+      ))}
+    </ul>
+    <div class="mt-6 rounded-lg border border-navy/10 border-l-4 border-l-teal bg-white p-6 text-slate">
+      The founder checked the work on a phone, the way a phone visitor sees it. One of the most
+      important catches of the project came from that, not from a tool.
+    </div>
+
+    <h2 class="mt-14 text-2xl font-bold">Positioning for the long run</h2>
+    <p class="mt-4 text-slate">
+      Positioning is the part that isn’t finished. One outside review said our Media and Labs copy read
+      too much alike, and offered a line for each: Media brings business in, Labs makes the business
+      run better. We agree with
+      the problem. The Media headline is still being chosen.
+    </p>
+    <p class="mt-4 text-slate">
+      Some long-run choices are already made. Each transparency page says what AI does and what a
+      person approves. The photos are labeled as AI-generated. Privacy requests come in through a form
+      instead of a public inbox. The privacy pages put plain retention periods in writing.
+    </p>
+
+    <h2 class="mt-14 text-2xl font-bold">What we can’t claim yet</h2>
+    <ul class="mt-6 space-y-3">
+      <li class="flex gap-3 text-slate"><span class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-ink" aria-hidden="true"></span><span>No traffic, lead or revenue numbers. We have not measured them yet. When we do, we will publish them with how they were counted.</span></li>
+      <li class="flex gap-3 text-slate"><span class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-ink" aria-hidden="true"></span><span>This paper covers the websites only.</span></li>
+      <li class="flex gap-3 text-slate"><span class="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-teal-ink" aria-hidden="true"></span><span>The client is us. That makes this a case study of method, not proof of results for someone else.</span></li>
+    </ul>
+
+    <div class="mt-16 rounded-lg border border-navy/10 bg-white p-8">
+      <h2 class="text-xl font-semibold">Want this for your business?</h2>
+      <p class="mt-3 text-slate">
+        Same method, your founder, your phone. We start with what your visitors see first.
+      </p>
+      <a href="/#contact" class="mt-4 inline-flex min-h-11 items-center text-sm font-semibold text-teal-ink hover:underline">Get in touch &rarr;</a>
+    </div>
+  </article>
+</Layout>
