@@ -1,6 +1,6 @@
 # Paul Ann Media
 
-> A full-service, AI-native media group. Websites, social campaigns, marketing
+> A media company for owners who do the work. Websites, social campaigns, marketing
 > strategy, lead generation, content systems, and AI visibility. A Trimmie
 > Holdings company, sister to Paul Ann Labs.
 
@@ -35,8 +35,7 @@ platform.
 
 ## Positions this company takes
 
-- Marketing advice is better from operators than from consultants. The firm was
-  built inside a working company applying AI to real operations.
+- Marketing advice is better from operators than from consultants.
 - Advertising spend should be paid by the client directly to the platform, never
   marked up through the agency.
 - A qualified lead must be defined before it is priced. Cheap unqualified volume
@@ -56,4 +55,4 @@ HomeTimeJobs is an owned product of Paul Ann Media.
 
 ## Contact
 
-john@yourlastcorporatejob.com
+Use the contact form at https://paulannmedia.com/#contact

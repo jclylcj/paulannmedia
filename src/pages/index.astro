@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ContactForm from '../components/ContactForm.astro';
 
 const services = [
   { name: 'Websites', detail: 'Fast, static, built to be found by search engines and by AI models.' },
@@ -10,17 +11,16 @@ const services = [
   { name: 'AI visibility', detail: 'Structured data, schema, and llms.txt so language models can find and cite you.' },
 ];
 ---
-<Layout title="Paul Ann Media - An AI-Native Media Group">
+<Layout title="Paul Ann Media - Get Your Name Out There">
   <section class="relative flex flex-col overflow-hidden bg-navy text-cream lg:block">
     <div class="relative z-10 mx-auto w-full max-w-6xl px-5 pt-6 pb-14 sm:pt-10 sm:pb-16 lg:py-32">
       <div class="flex max-w-xl flex-col lg:block lg:max-w-lg xl:max-w-xl">
-      <p class="text-sm font-semibold uppercase tracking-widest text-teal">Paul Ann Media</p>
+      <p class="text-sm font-semibold uppercase tracking-widest text-teal">For owners who do the work</p>
       <h1 class="mt-5 text-4xl font-bold leading-tight sm:text-5xl text-balance">
-        Marketing built for how business really runs.
+        Get your name out there.
       </h1>
       <p class="order-last mt-6 max-w-2xl text-lg text-slate-light lg:order-none">
-        A full-service media group, AI-native from the ground up. We build the audience,
-        then the machine that serves it ... websites, campaigns, content, and pipeline.
+        You run the business ... We build the websites, campaigns and content so your customers can find you.
       </p>
       <a href="#contact"
          class="mt-9 self-start inline-block rounded bg-teal px-8 py-3 font-semibold text-navy hover:bg-teal-light transition-colors">
@@ -61,13 +61,12 @@ const services = [
 
   <section class="border-y border-navy/10 bg-white py-20">
     <div class="mx-auto max-w-4xl px-5">
-      <h2 class="text-2xl font-bold">Why operators, not consultants</h2>
+      <h2 class="text-2xl font-bold">Why work with us</h2>
       <p class="mt-5 text-lg text-slate">
-        Most agencies learn your business on a discovery call. We learned ours by running one. Paul Ann Media was built inside a working company, applying AI to real
-        operations with real consequences. That's a different kind of advice than theory.
+        Most agencies learn your business on a discovery call. We start where you are: what you sell, who buys it, and how they find you today. Then we build what gets you found ... and keep it working.
       </p>
       <p class="mt-4 text-lg text-slate">
-        It also means we know what not to sell you. Not every problem is a marketing problem,
+        We also know what not to sell you. Not every problem is a marketing problem,
         and we'll say so.
       </p>
     </div>
@@ -106,10 +105,7 @@ const services = [
         Tell us what you're trying to grow. If we're not the right fit, we'll say that too ...
         and usually point you somewhere better.
       </p>
-      <a href="mailto:john@yourlastcorporatejob.com?subject=Paul%20Ann%20Media%20inquiry"
-         class="mt-8 inline-block rounded bg-teal px-8 py-3 font-semibold text-navy hover:bg-teal-light transition-colors">
-        john@yourlastcorporatejob.com
-      </a>
+      <ContactForm />
     </div>
   </section>
 </Layout>
